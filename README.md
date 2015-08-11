@@ -10,7 +10,10 @@ Docker images for the nginx.
 For more information about this image and its history, please see the relevant manifest file in the [`yeasy/docker-nginx` GitHub repo](https://github.com/yeasy/docker-nginx).
 
 # What is docker-nginx?
-Docker image with nginx installed. The image is built based on [nginx 1.9](https://hub.docker.com/_/nginx).
+Docker image with nginx installed, and proxy_pass, auth enabled. The image is built based on [nginx 1.9](https://hub.docker.com/_/nginx).
+
+It will proxy request to BACKEND:PORT, the auth is set using USERNAME:PASSWORD.
+
 
 # How to use this image?
 The docker image is auto built at [https://registry.hub.docker.com/u/yeasy/nginx/](https://registry.hub.docker.com/u/yeasy/nginx/).
@@ -23,7 +26,7 @@ FROM yeasy/nginx:latest
 
 ## Local Run
 ```sh
-$ docker run yeasy/nginx nginx
+$ docker run -p 80:80 -e BACKEND=web_container -e PORT=8080 -e USERNAME=user -e PASSWORD=pass yeasy/nginx
 ```
 
 # Which image is based on?
@@ -34,6 +37,11 @@ The image is based on official `nginx:1.9`.
 ## add apache2-utils
 Add the apache2-utils to support http basic auth.
 
+## add default conf template
+Add the nginx.default.conf to /etc/nginx/.
+
+## add start script
+Add the docker-entrypoint.sh to /tmp/, and will start it when bootup.
 
 # Supported Docker versions
 

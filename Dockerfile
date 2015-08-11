@@ -9,3 +9,8 @@ RUN apt-get update \
  && apt-get install -y --no-install-recommends \
       apache2-utils \
  && rm -rf /var/lib/apt/lists/*
+
+COPY nginx.default.conf /etc/nginx/
+COPY ./docker-entrypoint.sh /tmp/
+
+CMD bash /tmp/docker-entrypoint.sh
