@@ -13,4 +13,4 @@ RUN apt-get update \
 COPY nginx.default.conf /etc/nginx/
 COPY docker-entrypoint.sh /tmp/
 
-CMD bash /tmp/docker-entrypoint.sh
+CMD ["/bin/bash", "/tmp/docker-entrypoint.sh"]
