@@ -1,4 +1,5 @@
 #!/bin/bash
+
 set -e
 backend="${BACKEND:-web}"
 port="${PORT:-80}"
