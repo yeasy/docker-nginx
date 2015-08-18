@@ -1,9 +1,12 @@
-# This will install the apache2-utils into nginx, and let it support auth/proxy_pass
+# This will 
+# set the tz to utc +8
+# install the apache2-utils into nginx to let it support auth/proxy_pass
 
 FROM nginx:latest
 MAINTAINER yeasy@github
 
 ENV DEBIAN_FRONTEND noninteractive
+ENV TZ Asia/Shanghai
 
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \

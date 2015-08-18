@@ -33,6 +33,8 @@ $ docker run -p 80:80 -e BACKEND=web_container -e PORT=8080 -e USERNAME=user -e 
 The image is based on official `nginx:1.9`.
 
 # What has been changed?
+## set timezone
+Set the timezone to Asia/Shanghai.
 
 ## add apache2-utils
 Add the apache2-utils to support http basic auth.
