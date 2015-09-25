@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -e
-backend="${BACKEND:-web}"
+backend="${BACKEND:-localhost}"
 port="${PORT:-80}"
 username="${USERNAME:-user}"
 password="${PASSWORD:-pass}"
