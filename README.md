@@ -10,7 +10,7 @@ Docker images for the nginx.
 For more information about this image and its history, please see the relevant manifest file in the [`yeasy/docker-nginx` GitHub repo](https://github.com/yeasy/docker-nginx).
 
 # What is docker-nginx?
-Docker image with nginx installed, and proxy_pass, auth enabled. The image is built based on [nginx 1.9](https://hub.docker.com/_/nginx).
+Docker image with nginx installed, and proxy_pass, auth enabled. The image is built based on [nginx 1.29.6](https://hub.docker.com/_/nginx).
 
 It will proxy request to BACKEND:PORT, the auth is set using USERNAME:PASSWORD.
 
@@ -30,11 +30,11 @@ $ docker run -p 80:80 -e BACKEND=web_container -e PORT=8080 -e USERNAME=user -e 
 ```
 
 # Which image is based on?
-The image is based on official `nginx:1.9`.
+The image is based on official `nginx:1.29.6`.
 
 # What has been changed?
 ## set timezone
-Set the timezone to Asia/Shanghai.
+Set the timezone to UTC.
 
 ## add apache2-utils
 Add the apache2-utils to support http basic auth.
